@@ -14,7 +14,7 @@ By using this web application, you agree that:
 
 If you choose to improve and secure this application, contributions to the project are welcome via pull requests.
 
-## Required Environment Variables
+## Environment Variables
 
 Set the environment variables as defined in the `.env-example` file, and save that file as `.env`.
 
@@ -37,7 +37,7 @@ Set the environment variables as defined in the `.env-example` file, and save th
 
 ## How to use
 
-Run `node index.js` to start the webapp. Your browser should open to the page to start saving and sending template emails.
+Run `npm start` to start the webapp. Your browser should open to the page to start saving and sending template emails.
 
 ## Tips
 
