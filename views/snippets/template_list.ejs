@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <% Object.keys(templates).forEach(function(dbName) { %>
+        <thead>
+            <tr>
+                <th colspan="3"><%= dbName %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (templates[dbName].length === 0) { %>
+                <tr>
+                    <td colspan="3">No templates found in this database</td>
+                </tr>
+            <% } else { %>
+                <% templates[dbName].forEach(function(template) { %>
+                    <%- include('template_item', { template, dbName }) -%>
+                <% }) %>
+            <% } %>
+        </tbody>
+    <% }) %>
+</table>

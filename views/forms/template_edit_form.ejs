@@ -1,0 +1,20 @@
+<form action="<%= form_action %>" method="post">
+    <div class="row mb-2">
+        <div class="col-2 text-end fw-bold">Subject:</div>
+        <div class="col-10">
+            <input type="text" class="form-control" id="subject" name="subject" value="<%= template.subject %>" required>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-2 text-end fw-bold">Body:</div>
+        <div class="col-10">
+            <textarea class="form-control" id="body" name="body" data-editor><%= template.body %></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-2">
+            <input type="hidden" name="dbName" value="<%= dbName %>">
+            <button class="btn btn-primary" type="submit"><%= action_text %></button>
+        </div>
+    </div>
+</form>

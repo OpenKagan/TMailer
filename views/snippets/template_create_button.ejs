@@ -1,0 +1,13 @@
+<div class="mb-2">
+    <form action="/templates/create" method="get">
+        <div class="d-flex">
+            <select class="form-control" name="dbName" required>
+                <option value="">Select Database</option>
+                <% databases.forEach(database => { %>
+                    <option value="<%= database.replace(/\.db$/, '') %>"><%= database.replace(/\.db$/, '') %></option>
+                <% }) %>
+            </select>
+            <button class="btn btn-primary" type="submit">Create Template</button>
+        </div>
+    </form>
+</div>

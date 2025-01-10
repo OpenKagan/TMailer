@@ -1,0 +1,39 @@
+<form action="/send" method="post">
+    <div class="row mb-2">
+        <div class="col-2 text-end fw-bold">Template:</div>
+        <div class="col-10">
+            <select id="templateId" class="form-control" name="templateId" required>
+            <% Object.keys(templates).forEach((dbName) => { %>
+                <optgroup label="<%= dbName %>">
+                    <% templates[dbName].forEach((template) => { %>
+                        <option value="<%= `${dbName}-${template.id}` %>"><%= template.subject %></option>
+                    <% }); %>
+                </optgroup>
+            <% }); %>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-2 text-end fw-bold">To:</div>
+        <div class="col-10">
+            <input type="email" class="form-control" id="to" name="to" required>
+        </div>
+    </div>
+    <div id="variables" class="mb-2"></div>
+    <div class="row mb-2">
+        <div class="col-8 offset-2">
+            <div class="card mb-2">
+                <div class="card-header" id="email-preview-subject"></div>
+                <div class="card-body" id="email-preview-body"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-10 offset-2">
+            <button class="btn btn-primary" type="submit">Send Email</button>
+        </div>
+    </div>
+</form>
+<script>
+    window.templates = <%- JSON.stringify(templates) %>;
+</script>

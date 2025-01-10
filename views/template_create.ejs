@@ -1,0 +1,11 @@
+<%- include('base/header') -%>
+<div class="container-sm">
+    <h1 class="text-center mb-3">Create Template</h1>
+    <%- include('forms/template_edit_form', {
+        template: {},
+        action_text: 'Create Template',
+        form_action: `/templates/create`,
+        dbName
+    }) -%>
+</div>
+<%- include('base/footer') -%>
